@@ -30,38 +30,20 @@
     }
   </script>
   <style>html{scroll-behavior:smooth}</style>
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Biocruit Solutions",
-    "url": "/",
-    "logo": "https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "telephone": "+1-650-918-6001",
-      "contactType": "sales",
-      "areaServed": "US"
-    }],
-    "sameAs": [
-      "https://www.linkedin.com/company/infinite-technology-solutions"
-    ]
-  }
-  </script>
 </head>
 <body class="bg-slate-50 text-slate-900">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3 font-semibold">
+      <a href="#home" class="flex items-center gap-2 font-semibold">
+        <!-- Slightly bigger logo -->
         <img src="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" 
              alt="Biocruit Solutions logo" 
-             class="h-18 w-18 rounded-xl object-contain" />
-        <span class="text-2xl md:text-3xl">Biocruit Solutions</span>
+             class="h-12 w-12 rounded-xl object-contain" />
+        <!-- Slightly bigger text -->
+        <span class="text-xl">Biocruit Solutions</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-base md:text-lg">
+      <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#about" class="hover:text-brand-700">About</a>
         <a href="#specialties" class="hover:text-brand-700">Specialties</a>
         <a href="#roles" class="hover:text-brand-700">Roles</a>
@@ -293,4 +275,8 @@
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    if (menuBtn) menuBtn.addEventListener('
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
