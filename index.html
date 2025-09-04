@@ -8,12 +8,28 @@
   <meta property="og:title" content="Biocruit Solutions — Biotech & Life Sciences Recruiting" />
   <meta property="og:description" content="Independent recruiting partner for emerging to enterprise biopharma in the Bay Area, Southern California, and Seattle." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://itsso.com" />
-  <meta property="og:image" content="https://itsso.com/og-image.jpg" />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="/og-image.jpg" />
   <link rel="icon" href="/favicon.ico" />
+  <link rel="preload" as="image" href="/logo.png" />
 
-  <!-- Tailwind -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:'#eef7ff',100:'#d9ecff',200:'#bfe0ff',300:'#93ccff',
+              400:'#5bb0ff',500:'#2f95ff',600:'#0f79e6',
+              700:'#0a62bf',800:'#0c529c',900:'#0f447e'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>html{scroll-behavior:smooth}</style>
 
   <!-- Schema.org -->
@@ -22,8 +38,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Biocruit Solutions",
-    "url": "https://itsso.com",
-    "logo": "https://itsso.com/logo.png",
+    "url": "/",
+    "logo": "/logo.png",
     "contactPoint": [{
       "@type": "ContactPoint",
       "telephone": "+1-650-918-6001",
@@ -41,7 +57,7 @@
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-2 font-semibold">
-        <img src="logo.png" alt="Biocruit Solutions logo" class="h-9 w-9 rounded-xl" />
+        <img src="./logo.png" alt="Biocruit Solutions logo" class="h-9 w-9 rounded-xl object-contain" />
         <span class="text-lg">Biocruit Solutions</span>
       </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -72,19 +88,26 @@
     <div class="max-w-7xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-black tracking-tight">Biotech & Life Sciences Executive Recruiting, On-Demand</h1>
-        <p class="mt-5 text-lg text-slate-600 max-w-prose">Independent recruiting partner for emerging to enterprise biopharma in the Bay Area, Southern California, and Seattle. Director → SVP searches across Clinical Development (MD), Regulatory, Biometrics, CMC/Process Development, and more.</p>
+        <p class="mt-5 text-lg text-slate-600 max-w-prose">
+          Independent recruiting partner for emerging to enterprise biopharma in the Bay Area, Southern California, and Seattle.
+          Director → SVP searches across Clinical Development (MD), Regulatory, Biometrics, CMC/Process Development, and more.
+        </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">Start a search</a>
-          <a href="#specialties" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 hover:bg-white">Explore specialties</a>
+          <a href="#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">
+            Start a search
+          </a>
+          <a href="#specialties" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 hover:bg-white">
+            Explore specialties
+          </a>
         </div>
-        <p class="mt-4 text-sm text-slate-500">Typical timelines: 4–6 weeks to shortlist; tailored to your process.</p>
+        <p class="mt-4 text-sm text-slate-500">Typical timelines: <span class="font-medium">4–6 weeks</span> to shortlist; tailored to your process.</p>
       </div>
       <div>
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 class="text-xl font-semibold">Proven delivery</h2>
           <ul class="mt-4 space-y-2 text-slate-700 text-sm">
             <li>608 direct FTE hires delivered at Gilead.</li>
-            <li>Led 25-person TA org (13 recruiters, 12 sourcers) for North America R&D.</li>
+            <li>Led 25-person TA org (13 recruiters, 12 sourcers) for North America R&amp;D.</li>
             <li>Team delivered 2,719 FTEs (2009–2016).</li>
             <li>Established 1996; hands-on executive search partner.</li>
           </ul>
@@ -98,7 +121,11 @@
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
       <div>
         <h2 class="text-3xl font-extrabold">About Biocruit Solutions</h2>
-        <p class="mt-4 text-slate-700">Founded in 1996 by Gordon Straughn, Biocruit Solutions partners with small to mid-sized biotech and established biopharma on hard-to-fill leadership roles. Gordon supported Gilead Sciences from 2006–2016—personally recruiting and hiring 608 FTEs and managing a North American R&D talent acquisition team that delivered 2,719 hires during that period. Engagements span Director through SVP levels across R&D and G&A.</p>
+        <p class="mt-4 text-slate-700">
+          Founded in 1996 by Gordon Straughn, Biocruit Solutions partners with small to mid-sized biotech and established biopharma on hard-to-fill leadership roles.
+          Gordon supported Gilead Sciences from 2006–2016—personally recruiting and hiring 608 FTEs and managing a North American R&amp;D talent acquisition team that
+          delivered 2,719 hires during that period. Engagements span Director through SVP levels across R&amp;D and G&amp;A.
+        </p>
       </div>
       <div class="rounded-2xl border p-6 bg-slate-50">
         <h3 class="font-semibold">Highlights</h3>
@@ -110,7 +137,46 @@
     </div>
   </section>
 
-  <!-- Roles -->
+  <!-- Specialties -->
+  <section id="specialties" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">Search Specialties</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-8">
+        <div class="rounded-2xl border p-6 bg-white">
+          <h3 class="font-semibold text-lg">Functions</h3>
+          <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-700">
+            <li>Clinical Development (MD/PhD)</li>
+            <li>Regulatory Affairs</li>
+            <li>Biostatistics &amp; Statistical Programming</li>
+            <li>Clinical Data Management</li>
+            <li>Drug Safety / Pharmacovigilance</li>
+            <li>Biomarkers / Translational</li>
+            <li>Medical Writing</li>
+            <li>Quality (GxP, CMC)</li>
+            <li>Process &amp; Analytical Development</li>
+            <li>CMC / Manufacturing</li>
+            <li>Project / Program Management</li>
+            <li>IT / Validation / Information Mgmt</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border p-6 bg-white">
+          <h3 class="font-semibold text-lg">Therapeutic Areas</h3>
+          <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-700">
+            <li>Hepatology</li>
+            <li>Oncology</li>
+            <li>Immunology</li>
+            <li>Infectious Disease</li>
+            <li>Metabolic</li>
+            <li>Rare Disease</li>
+            <li>Gene Therapy</li>
+            <li>Biologics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles (two sections only) -->
   <section id="roles" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-extrabold">Typical Roles Filled</h2>
@@ -153,7 +219,7 @@
           <p class="mt-2 text-slate-700">Structured screens, panel alignment, scorecards; candidate experience stewardship.</p>
         </div>
         <div class="rounded-2xl border p-6">
-          <h3 class="font-semibold">4) Offer & Close</h3>
+          <h3 class="font-semibold">4) Offer &amp; Close</h3>
           <p class="mt-2 text-slate-700">References, compensation alignment, close plan, and start-date coordination.</p>
         </div>
         <div class="rounded-2xl border p-6">
