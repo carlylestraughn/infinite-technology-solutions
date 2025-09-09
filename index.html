@@ -103,21 +103,18 @@
       <div>
         <h2 class="text-3xl font-extrabold">About Biocruit Solutions</h2>
         <p class="mt-4 text-slate-700">
-          Founder of Biocruit Solutions with more than 20 years of experience leading executive search in the biotechnology and pharmaceutical industries. <br><br>
-          Partnered with Gilead, Juno Therapeutics, Harpoon Therapeutics, IDbyDNA, and other leading organizations to recruit Director through C-suite leaders across R&amp;D, Clinical Development, Regulatory Affairs, and Corporate Functions. <br><br>
-          Previously built and managed Gilead’s North American R&amp;D Talent Acquisition team of 25, delivering more than 2,700 hires—including all Clinical Development MDs across five therapeutic areas—and personally recruiting 600+ professionals. <br><br>
-          Recognized for discretion, trusted partnership with executive leadership, and a proven ability to secure transformative talent for high-growth and innovative companies. <br><br>
-          Experienced across the full spectrum of functions including R&amp;D, Clinical Development, Regulatory &amp; Quality, and Corporate Operations, with a track record of successfully recruiting hard-to-find leaders in highly specialized domains.
+          Gordon Straughn, founder of Biocruit Solutions, brings over 20 years of experience leading executive search in the biotechnology and pharmaceutical industries. 
+          He has partnered with organizations ranging from early-stage startups to global leaders, successfully recruiting across R&amp;D, Clinical Development, Regulatory Affairs, and Corporate Functions. 
+          Recognized for discretion, strategic partnership, and a proven ability to secure transformative talent, Gordon continues to serve as a trusted advisor to high-growth and innovative companies.
         </p>
       </div>
       <div class="rounded-2xl border p-6 bg-slate-50">
         <h3 class="font-semibold">Highlights</h3>
         <ul class="mt-3 list-disc ml-5 space-y-1 text-slate-700 text-sm">
-          <li>20+ years of executive search experience in biotech &amp; pharma.</li>
-          <li>Deep expertise recruiting Director through C-suite leaders across R&amp;D, Clinical Development, Regulatory Affairs, and Corporate Functions.</li>
-          <li>Partner to leading organizations including Gilead, Juno Therapeutics, Harpoon Therapeutics, and IDbyDNA.</li>
-          <li>Built and led Gilead’s North American R&amp;D Talent Acquisition team, delivering 2,700+ hires.</li>
+          <li>20+ years of executive search in biotech and pharma.</li>
+          <li>Built and led Gilead’s North America R&amp;D Talent Acquisition team (25 staff, 2,700+ hires).</li>
           <li>Personally recruited 600+ professionals, including Clinical Development MDs across five therapeutic areas.</li>
+          <li>Proven track record with Director through C-suite searches.</li>
         </ul>
       </div>
     </div>
@@ -240,18 +237,52 @@
           <p>Calendly: <a class="text-brand-700 hover:underline" href="https://calendly.com/gordon-straughn">https://calendly.com/gordon-straughn</a></p>
         </div>
       </div>
-      <form class="bg-white rounded-2xl border p-6 shadow-sm space-y-4" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-        <div>
-          <label class="block text-sm font-medium" for="name">Your name</label>
-          <input class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" id="name" name="name" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium" for="email">Email</label>
-          <input type="email" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" id="email" name="email" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium" for="company">Company</label>
-          <input class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" id="company" name="company" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium" for="message">What are you hiring?</
+
+      <!-- Styled Google Form Embed -->
+      <div class="rounded-2xl border p-6 shadow-sm bg-white">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe_p4JQA5GvmJFuB-Q6LCRLgh-esqHzGEVQ-wVR0lFsVFLz-g/viewform?embedded=true" 
+          width="100%" 
+          height="1959" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0" 
+          class="rounded-xl border border-slate-300 shadow-sm">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t bg-white">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600">
+      <p>© <span id="year"></span> Biocruit Solutions. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a class="hover:underline" href="#">Privacy</a>
+        <a class="hover:underline" href="#">Terms</a>
+        <a class="hover:underline" href="https://www.linkedin.com/company/infinite-technology-solutions">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Vapi Widget -->
+  <vapi-widget 
+    assistant-id="e96d205b-6ca4-4c36-9250-573cf063950f" 
+    public-key="dfa7f6ae-5159-46c9-8b0c-ba6d3c1b1b83">
+  </vapi-widget>
+
+  <script
+    src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js"
+    async
+    type="text/javascript">
+  </script>
+</body>
+</html>
