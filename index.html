@@ -32,9 +32,7 @@
           boxShadow: {
             'glass': '0 10px 30px rgba(2,12,27,0.25)'
           },
-          backdropBlur: {
-            'xs': '2px'
-          }
+          backdropBlur: { 'xs': '2px' }
         }
       }
     }
@@ -44,9 +42,7 @@
     html{scroll-behavior:smooth}
 
     /* ---------- LAYERING ---------- */
-    .stars-layer {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    }
+    .stars-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
     .decor-layer {
       position: fixed; inset: 0; z-index: 2; pointer-events: none;
       mix-blend-mode: screen;
@@ -54,8 +50,8 @@
     .content-layer { position: relative; z-index: 10; }
 
     /* ---------- BACKGROUND CANVAS (STARS) ---------- */
-    #bgDots {
-      width: 100vw; height: 100vh; display:block;
+    #bgDots{
+      width:100vw;height:100vh;display:block;
       background:
         radial-gradient(1200px 800px at 20% 0%, rgba(15,68,126,0.4), transparent 60%),
         radial-gradient(1000px 700px at 80% 10%, rgba(12,82,156,0.35), transparent 60%),
@@ -63,54 +59,25 @@
     }
 
     /* ---------- GLASS CARD ---------- */
-    .glass {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    .glass{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
     /* ---------- BIOTECH SVG ANIMATIONS ---------- */
-    @keyframes floatY {
-      0%   { transform: translate3d(0, 0, 0) rotate(0deg); }
-      100% { transform: translate3d(0.5rem, -1.25rem, 0) rotate(2deg); }
-    }
-    @keyframes floatXY {
-      0%   { transform: translate3d(0, 0, 0) }
-      100% { transform: translate3d(-0.75rem, 0.75rem, 0) }
-    }
-    @keyframes slowSpin {
-      0%   { transform: rotate(0deg) }
-      100% { transform: rotate(360deg) }
-    }
-    .float-slow   { animation: floatY 14s ease-in-out infinite alternate; }
-    .float-slower { animation: floatXY 22s ease-in-out infinite alternate; }
-    .spin-slowest { animation: slowSpin 90s linear infinite; }
+    @keyframes floatY{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(.5rem,-1.25rem,0) rotate(2deg)}}
+    @keyframes floatXY{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-.75rem,.75rem,0)}}
+    @keyframes slowSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+    .float-slow{animation:floatY 14s ease-in-out infinite alternate;}
+    .float-slower{animation:floatXY 22s ease-in-out infinite alternate;}
+    .spin-slowest{animation:slowSpin 90s linear infinite;}
 
-    .dna-top-right {
-      position: fixed; top: 1.75rem; right: 1.25rem;
-      width: min(28vw, 320px);
-      opacity: .25; filter: drop-shadow(0 2px 8px rgba(24,69,150,.25));
-    }
-    .hex-upper-right {
-      position: fixed; top: 24vh; right: 12vw;
-      width: min(22vw, 260px);
-      opacity: .18; filter: drop-shadow(0 2px 8px rgba(24,69,150,.25));
-    }
-    .molecule-bottom-left-global {
-      position: fixed; left: 1rem; bottom: 5.5rem;
-      width: min(34vw, 360px);
-      opacity: .22; filter: drop-shadow(0 3px 10px rgba(24,69,150,.25));
-    }
-
-    /* (kept for future use, but no instance in DOM now)
-    .molecule-accent { display:none; }
-    */
-
-    @media (max-width: 768px) {
-      .molecule-bottom-left-global { display: none; }
-    }
+    .dna-top-right{position:fixed;top:1.75rem;right:1.25rem;width:min(28vw,320px);opacity:.25;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
+    .hex-upper-right{position:fixed;top:24vh;right:12vw;width:min(22vw,260px);opacity:.18;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
+    .molecule-bottom-left-global{position:fixed;left:1rem;bottom:5.5rem;width:min(34vw,360px);opacity:.22;filter:drop-shadow(0 3px 10px rgba(24,69,150,.25))}
+    @media (max-width:768px){ .molecule-bottom-left-global{display:none;} }
   </style>
 </head>
 <body class="bg-base-950 text-slate-100">
@@ -124,24 +91,23 @@
     <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none" aria-hidden="true">
       <defs>
         <linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"  stop-color="#8ab4ff"/>
-          <stop offset="100%" stop-color="#5bb0ff"/>
+          <stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/>
         </linearGradient>
       </defs>
-      <path d="M30 30 C 160 90, 80 210, 200 270
-               M200 30 C 80 90, 160 210, 30 270
-               M30 270 C 160 330, 80 450, 200 510
-               M200 270 C 80 330, 160 450, 30 510"
+      <path d="M30 30 C160 90, 80 210, 200 270
+               M200 30 C80 90, 160 210, 30 270
+               M30 270 C160 330, 80 450, 200 510
+               M200 270 C80 330, 160 450, 30 510"
             stroke="url(#dnaG)" stroke-width="4" opacity="0.8"/>
       <g stroke="#99c2ff" opacity="0.6">
-        <line x1="60" y1="70"  x2="170" y2="90"  />
-        <line x1="50" y1="120" x2="180" y2="140" />
-        <line x1="60" y1="170" x2="170" y2="190" />
-        <line x1="50" y1="220" x2="180" y2="240" />
-        <line x1="60" y1="320" x2="170" y2="340" />
-        <line x1="50" y1="370" x2="180" y2="390" />
-        <line x1="60" y1="420" x2="170" y2="440" />
-        <line x1="50" y1="470" x2="180" y2="490" />
+        <line x1="60" y1="70"  x2="170" y2="90"/>
+        <line x1="50" y1="120" x2="180" y2="140"/>
+        <line x1="60" y1="170" x2="170" y2="190"/>
+        <line x1="50" y1="220" x2="180" y2="240"/>
+        <line x1="60" y1="320" x2="170" y2="340"/>
+        <line x1="50" y1="370" x2="180" y2="390"/>
+        <line x1="60" y1="420" x2="170" y2="440"/>
+        <line x1="50" y1="470" x2="180" y2="490"/>
       </g>
     </svg>
 
@@ -155,7 +121,7 @@
         <path d="M125 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
         <path d="M175 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
       </g>
-      <circle cx="62"  cy="44" r="2.2" fill="#66d6ff"/>
+      <circle cx="62" cy="44" r="2.2" fill="#66d6ff"/>
       <circle cx="212" cy="44" r="2.2" fill="#66d6ff"/>
       <circle cx="137" cy="87" r="2.2" fill="#66d6ff"/>
     </svg>
@@ -164,25 +130,24 @@
     <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
       <defs>
         <radialGradient id="molG" cx="50%" cy="50%" r="60%">
-          <stop offset="0%"  stop-color="#a8cdfc"/>
-          <stop offset="100%" stop-color="#5cb6ff"/>
+          <stop offset="0%" stop-color="#a8cdfc"/><stop offset="100%" stop-color="#5cb6ff"/>
         </radialGradient>
       </defs>
       <g stroke="#87c6ff" stroke-width="2" opacity=".65">
         <line x1="40"  y1="120" x2="120" y2="80"/>
-        <line x1="120" y1="80"  x2="170" y2="120"/>
+        <line x1="120" y1="80" x2="170" y2="120"/>
         <line x1="170" y1="120" x2="220" y2="90"/>
-        <line x1="220" y1="90"  x2="280" y2="110"/>
-        <line x1="120" y1="80"  x2="100" y2="40"/>
+        <line x1="220" y1="90" x2="280" y2="110"/>
+        <line x1="120" y1="80" x2="100" y2="40"/>
         <line x1="170" y1="120" x2="160" y2="170"/>
       </g>
-      <circle cx="40"  cy="120" r="10" fill="url(#molG)"/>
-      <circle cx="120" cy="80"  r="12" fill="url(#molG)"/>
+      <circle cx="40" cy="120" r="10" fill="url(#molG)"/>
+      <circle cx="120" cy="80" r="12" fill="url(#molG)"/>
       <circle cx="170" cy="120" r="11" fill="url(#molG)"/>
-      <circle cx="220" cy="90"  r="9"  fill="url(#molG)"/>
+      <circle cx="220" cy="90" r="9" fill="url(#molG)"/>
       <circle cx="280" cy="110" r="10" fill="url(#molG)"/>
-      <circle cx="100" cy="40"  r="7"  fill="url(#molG)"/>
-      <circle cx="160" cy="170" r="8"  fill="url(#molG)"/>
+      <circle cx="100" cy="40" r="7" fill="url(#molG)"/>
+      <circle cx="160" cy="170" r="8" fill="url(#molG)"/>
     </svg>
   </div>
 
@@ -193,9 +158,7 @@
     <header class="sticky top-0 z-50 bg-base-950/70 backdrop-blur border-b border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#home" class="flex items-center gap-3 font-semibold">
-          <img src="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif"
-               alt="Biocruit Solutions logo"
-               class="h-10 w-10 rounded-lg object-contain" />
+          <img src="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" alt="Biocruit Solutions logo" class="h-10 w-10 rounded-lg object-contain" />
           <span class="text-xl">Biocruit Solutions</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
@@ -232,12 +195,8 @@
             Director → SVP searches across Clinical Development (MD), Regulatory, Biometrics, CMC/Process Development, and more.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">
-              Start a search
-            </a>
-            <a href="#specialties" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">
-              Explore specialties
-            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">Start a search</a>
+            <a href="#specialties" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">Explore specialties</a>
           </div>
           <p class="mt-4 text-sm text-slate-400">Typical timelines: <span class="font-medium">4–6 weeks</span> to shortlist; tailored to your process.</p>
         </div>
@@ -291,31 +250,17 @@
           <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
             <h3 class="font-semibold text-lg">Functions</h3>
             <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-300/90">
-              <li>Clinical Development (MD/PhD)</li>
-              <li>Regulatory Affairs</li>
-              <li>Biostatistics &amp; Statistical Programming</li>
-              <li>Clinical Data Management</li>
-              <li>Drug Safety / Pharmacovigilance</li>
-              <li>Biology / Biomarkers / Translational</li>
-              <li>Medical Writing</li>
-              <li>Quality (GxP, CMC)</li>
-              <li>Process &amp; Analytical Development</li>
-              <li>CMC / Manufacturing</li>
-              <li>Project / Program Management</li>
-              <li>IT / Validation / Information Mgmt</li>
+              <li>Clinical Development (MD/PhD)</li><li>Regulatory Affairs</li><li>Biostatistics &amp; Statistical Programming</li>
+              <li>Clinical Data Management</li><li>Drug Safety / Pharmacovigilance</li><li>Biology / Biomarkers / Translational</li>
+              <li>Medical Writing</li><li>Quality (GxP, CMC)</li><li>Process &amp; Analytical Development</li>
+              <li>CMC / Manufacturing</li><li>Project / Program Management</li><li>IT / Validation / Information Mgmt</li>
             </ul>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
             <h3 class="font-semibold text-lg">Therapeutic Areas</h3>
             <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-300/90">
-              <li>Hepatology</li>
-              <li>Oncology</li>
-              <li>Immunology</li>
-              <li>Infectious Disease</li>
-              <li>Metabolic</li>
-              <li>Rare Disease</li>
-              <li>Gene Therapy</li>
-              <li>Biologics</li>
+              <li>Hepatology</li><li>Oncology</li><li>Immunology</li><li>Infectious Disease</li>
+              <li>Metabolic</li><li>Rare Disease</li><li>Gene Therapy</li><li>Biologics</li>
             </ul>
           </div>
         </div>
@@ -354,24 +299,15 @@
         <div class="mt-8 grid md:grid-cols-3 gap-6">
           <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
             <h3 class="font-semibold text-lg">Executive partnership</h3>
-            <p class="mt-2 text-slate-300/90 text-sm">
-              Discreet, senior-level engagement with a hands-on partner.
-              Calibrated search plans and transparent market feedback weekly.
-            </p>
+            <p class="mt-2 text-slate-300/90 text-sm">Discreet, senior-level engagement with a hands-on partner. Calibrated search plans and transparent market feedback weekly.</p>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
             <h3 class="font-semibold text-lg">Hard-to-find expertise</h3>
-            <p class="mt-2 text-slate-300/90 text-sm">
-              Deep networks across Clinical Development MDs, Biometrics, Regulatory,
-              and specialized R&amp;D functions to surface the right shortlists fast.
-            </p>
+            <p class="mt-2 text-slate-300/90 text-sm">Deep networks across Clinical Development MDs, Biometrics, Regulatory, and specialized R&amp;D functions to surface the right shortlists fast.</p>
           </div>
           <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
             <h3 class="font-semibold text-lg">Flexible models</h3>
-            <p class="mt-2 text-slate-300/90 text-sm">
-              Retained, container, project-based, or fractional recruiting—configured
-              to your timeline, confidentiality, and hiring goals.
-            </p>
+            <p class="mt-2 text-slate-300/90 text-sm">Retained, container, project-based, or fractional recruiting—configured to your timeline, confidentiality, and hiring goals.</p>
           </div>
         </div>
       </div>
@@ -381,7 +317,6 @@
     <section id="process" class="py-20">
       <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-3xl font-extrabold">How It Works</h2>
-
         <div class="mt-8 grid md:grid-cols-4 gap-6 text-sm">
           <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6 shadow-sm">
             <h3 class="font-semibold">1) Calibration</h3>
@@ -405,11 +340,7 @@
           <h3 class="font-semibold">Engagement Models</h3>
           <div class="mt-4 text-slate-300/90">
             <ul class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-base">
-              <li>Executive search (retained)</li>
-              <li>Container search</li>
-              <li>Project-based builds</li>
-              <li>Confidential replacements</li>
-              <li>Full-cycle fractional recruiting</li>
+              <li>Executive search (retained)</li><li>Container search</li><li>Project-based builds</li><li>Confidential replacements</li><li>Full-cycle fractional recruiting</li>
             </ul>
           </div>
         </div>
@@ -427,13 +358,16 @@
             <p>Phone: <a class="text-brand-300 hover:underline" href="tel:+16504358355">650-435-8355</a></p>
             <p>Calendly: <a class="text-brand-300 hover:underline" href="https://calendly.com/gordon-straughn">https://calendly.com/gordon-straughn</a></p>
           </div>
-          <!-- (local molecule accent removed) -->
         </div>
 
         <!-- Formspree form -->
-        <form class="bg-white/[.03] rounded-2xl border border-white/10 p-6 shadow-sm space-y-4"
-              action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+        <form id="contactForm"
+              class="bg-white/[.03] rounded-2xl border border-white/10 p-6 shadow-sm space-y-4"
+              action="https://formspree.io/f/mrbajjpj"
               method="POST">
+          <input type="hidden" name="_subject" value="New inquiry from biocruitsolutions.com" />
+          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
           <div>
             <label class="block text-sm font-medium" for="name">Your name</label>
             <input class="mt-1 w-full rounded-xl border border-white/15 bg-base-900/50 px-3 py-2 text-slate-100 placeholder-slate-400"
@@ -454,10 +388,12 @@
             <textarea class="mt-1 w-full rounded-xl border border-white/15 bg-base-900/50 px-3 py-2 text-slate-100 placeholder-slate-400"
                       id="message" name="message" rows="5" placeholder="Role, seniority, location, timeline"></textarea>
           </div>
-          <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 py-2 rounded-xl" type="submit">
+
+          <button id="submitBtn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 py-2 rounded-xl" type="submit">
             Send
           </button>
-          <p class="text-xs text-slate-400 mt-1">Powered by Formspree. Replace <code>YOUR_FORMSPREE_ID</code> after creating a form.</p>
+
+          <p id="formStatus" class="text-sm mt-2 hidden"></p>
         </form>
       </div>
     </section>
@@ -491,51 +427,62 @@
       const ctx = canvas.getContext('2d', { alpha: true });
       let W, H, dots, rafId;
 
-      function resize() {
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-        spawnDots();
-      }
-
-      function spawnDots() {
-        const density = Math.min(120, Math.floor((W * H) / 18000));
-        dots = new Array(density).fill(0).map(() => ({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          r: Math.random() * 1.5 + 0.4,
-          a: Math.random() * 2 * Math.PI,
-          s: Math.random() * 0.35 + 0.12
+      function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; spawnDots(); }
+      function spawnDots(){
+        const density = Math.min(120, Math.floor((W*H)/18000));
+        dots = Array.from({length: density}, () => ({
+          x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.4,
+          a: Math.random()*2*Math.PI, s: Math.random()*0.35+0.12
         }));
       }
-
-      function step() {
-        ctx.clearRect(0, 0, W, H);
-        ctx.fillStyle = 'rgba(255,255,255,0.6)';
-        dots.forEach(p => {
-          p.x += Math.cos(p.a) * p.s;
-          p.y += Math.sin(p.a) * p.s;
-          p.a += (Math.random() - 0.5) * 0.02;
-
-          if (p.x < -10) p.x = W + 10;
-          if (p.x > W + 10) p.x = -10;
-          if (p.y < -10) p.y = H + 10;
-          if (p.y > H + 10) p.y = -10;
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fill();
-        });
+      function step(){
+        ctx.clearRect(0,0,W,H); ctx.fillStyle='rgba(255,255,255,0.6)';
+        for(const p of dots){
+          p.x += Math.cos(p.a)*p.s; p.y += Math.sin(p.a)*p.s; p.a += (Math.random()-0.5)*0.02;
+          if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10; if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10;
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+        }
         rafId = requestAnimationFrame(step);
       }
+      function init(){ canvas.classList.add('stars-layer'); if(!prefersReduced) step(); }
+      resize(); addEventListener('resize', resize, {passive:true}); init();
+      addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
+    })();
+  </script>
 
-      function init() {
-        canvas.classList.add('stars-layer');
-        if (!prefersReduced) step();
+  <!-- Formspree AJAX submit + inline status -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const btn = document.getElementById('submitBtn');
+
+      async function handleSubmit(e){
+        e.preventDefault();
+        status.className = 'text-sm mt-2 text-slate-300';
+        status.textContent = 'Sending…';
+        status.classList.remove('hidden');
+        btn.disabled = true;
+
+        try{
+          const data = new FormData(form);
+          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+          if(resp.ok){
+            status.className = 'text-sm mt-2 text-emerald-300';
+            status.textContent = 'Thanks—your message has been sent.';
+            form.reset();
+          }else{
+            const json = await resp.json().catch(()=>({}));
+            throw new Error(json.errors?.[0]?.message || 'Something went wrong. Please email gordon@biocruitsolutions.com.');
+          }
+        }catch(err){
+          status.className = 'text-sm mt-2 text-rose-300';
+          status.textContent = err.message;
+        }finally{
+          btn.disabled = false;
+        }
       }
-      resize();
-      window.addEventListener('resize', resize, { passive: true });
-      init();
-      window.addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
+      form.addEventListener('submit', handleSubmit);
     })();
   </script>
 </body>
