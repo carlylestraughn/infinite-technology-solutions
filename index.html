@@ -24,14 +24,9 @@
               400:'#5bb0ff',500:'#2f95ff',600:'#0f79e6',
               700:'#0a62bf',800:'#0c529c',900:'#0f447e'
             },
-            base: {
-              950: '#071426',
-              900: '#0b1a33'
-            }
+            base: { 950: '#071426', 900: '#0b1a33' }
           },
-          boxShadow: {
-            'glass': '0 10px 30px rgba(2,12,27,0.25)'
-          },
+          boxShadow: { 'glass': '0 10px 30px rgba(2,12,27,0.25)' },
           backdropBlur: { 'xs': '2px' }
         }
       }
@@ -43,19 +38,17 @@
 
     /* ---------- LAYERING ---------- */
     .stars-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-    .decor-layer {
-      position: fixed; inset: 0; z-index: 2; pointer-events: none;
-      mix-blend-mode: screen;
-    }
+    .decor-layer { position: fixed; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen; }
     .content-layer { position: relative; z-index: 10; }
 
     /* ---------- BACKGROUND CANVAS (STARS) ---------- */
     #bgDots{
       width:100vw;height:100vh;display:block;
+      /* lighter blue Option B */
       background:
-        radial-gradient(1200px 800px at 20% 0%, rgba(15,68,126,0.3), transparent 60%),
-        radial-gradient(1000px 700px at 80% 10%, rgba(12,82,156,0.25), transparent 60%),
-        linear-gradient(180deg, #13345c, #0b2544);
+        radial-gradient(1200px 800px at 20% 0%, rgba(27,99,191,0.30), transparent 60%),
+        radial-gradient(1000px 700px at 80% 10%, rgba(18,80,160,0.28), transparent 60%),
+        linear-gradient(180deg, #173b6d, #102c54);
     }
 
     /* ---------- GLASS CARD ---------- */
@@ -82,12 +75,12 @@
 </head>
 <body class="bg-base-950 text-slate-100">
 
-  <!-- Stars canvas -->
+  <!-- Stars canvas (deepest layer) -->
   <canvas id="bgDots" class="stars-layer" aria-hidden="true"></canvas>
 
-  <!-- Biotech decorative SVGs -->
+  <!-- Biotech decorative SVGs (above stars, below content) -->
   <div class="decor-layer">
-    <!-- DNA Helix -->
+    <!-- DNA Helix (top-right) -->
     <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none" aria-hidden="true">
       <defs>
         <linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
@@ -111,7 +104,7 @@
       </g>
     </svg>
 
-    <!-- Hex lattice -->
+    <!-- Hex lattice (upper/right-mid) -->
     <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none" aria-hidden="true">
       <g stroke="#66d6ff" stroke-width="1.6" opacity="0.55">
         <path d="M50 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
@@ -126,7 +119,7 @@
       <circle cx="137" cy="87" r="2.2" fill="#66d6ff"/>
     </svg>
 
-    <!-- Molecule -->
+    <!-- Global molecule (bottom-left) -->
     <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
       <defs>
         <radialGradient id="molG" cx="50%" cy="50%" r="60%">
@@ -142,7 +135,7 @@
         <line x1="170" y1="120" x2="160" y2="170"/>
       </g>
       <circle cx="40" cy="120" r="10" fill="url(#molG)"/>
-      <circle cx="120" cy="80"  r="12" fill="url(#molG)"/>
+      <circle cx="120" cy="80" r="12" fill="url(#molG)"/>
       <circle cx="170" cy="120" r="11" fill="url(#molG)"/>
       <circle cx="220" cy="90"  r="9"  fill="url(#molG)"/>
       <circle cx="280" cy="110" r="10" fill="url(#molG)"/>
@@ -151,8 +144,36 @@
     </svg>
   </div>
 
-  <!-- Content -->
+  <!-- Everything else sits above the decorative layer -->
   <div class="content-layer">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-base-950/70 backdrop-blur border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 font-semibold">
+          <img src="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" alt="Biocruit Solutions logo" class="h-10 w-10 rounded-lg object-contain" />
+          <span class="text-xl">Biocruit Solutions</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-brand-300">About</a>
+          <a href="#specialties" class="hover:text-brand-300">Specialties</a>
+          <a href="#roles" class="hover:text-brand-300">Roles</a>
+          <a href="#process" class="hover:text-brand-300">Process</a>
+          <a href="#why" class="hover:text-brand-300">Why us</a>
+          <a href="#contact" class="hover:text-brand-300">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/15" aria-label="Open menu">☰</button>
+      </div>
+      <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-base-950">
+        <div class="px-4 py-3 grid gap-3 text-sm">
+          <a href="#about" class="hover:text-brand-300">About</a>
+          <a href="#specialties" class="hover:text-brand-300">Specialties</a>
+          <a href="#roles" class="hover:text-brand-300">Roles</a>
+          <a href="#process" class="hover:text-brand-300">Process</a>
+          <a href="#why" class="hover:text-brand-300">Why us</a>
+          <a href="#contact" class="hover:text-brand-300">Contact</a>
+        </div>
+      </div>
+    </header>
 
     <!-- Hero -->
     <section id="home" class="relative">
@@ -165,6 +186,11 @@
             Independent recruiting partner for emerging to enterprise biopharma in the Bay Area, Southern California, and Seattle.
             Director → SVP searches across Clinical Development (MD), Regulatory, Biometrics, CMC/Process Development, and more.
           </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">Start a search</a>
+            <a href="#specialties" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">Explore specialties</a>
+          </div>
+          <p class="mt-4 text-sm text-slate-400">Typical timelines: <span class="font-medium">4–6 weeks</span> to shortlist; tailored to your process.</p>
         </div>
         <div class="mt-10 md:mt-16">
           <div class="rounded-2xl border border-white/10 glass p-6 shadow-glass">
@@ -180,10 +206,143 @@
       </div>
     </section>
 
+    <!-- About -->
+    <section id="about" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-extrabold">About Biocruit Solutions</h2>
+          <p class="mt-4 text-slate-300/90">
+            Gordon Straughn, founder of Biocruit Solutions, brings over 20 years of experience leading executive search
+            in the biotechnology and pharmaceutical industries. He has partnered with organizations from early-stage startups
+            to established leaders like Gilead Sciences to recruit Director through C-suite talent across R&amp;D, Clinical Development,
+            Regulatory Affairs, and corporate functions.
+          </p>
+          <p class="mt-4 text-slate-300/90">
+            Previously, Gordon built and managed Gilead’s North American R&amp;D Talent Acquisition team of 25—delivering more than
+            2,700 total FTE hires, including all Clinical Development MDs across five therapeutic areas—and personally recruiting 600+ professionals.
+            He’s recognized for discretion, trusted partnership with executive leadership, and a proven ability to secure transformative talent
+            for high-growth and innovative companies.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+          <h3 class="font-semibold">Highlights</h3>
+          <ul class="mt-3 list-disc ml-5 space-y-1 text-slate-300/90 text-sm">
+            <li>Executive search across Clinical Development (MD), Bioinformatics &amp; Biostatistics, Medical Writing, Regulatory Affairs, Project Management.</li>
+            <li>Trusted partner to CSOs, EVPs, VPs, and functional heads; repeat engagements across scale-up phases.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialties -->
+    <section id="specialties" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-extrabold">Search Specialties</h2>
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold text-lg">Functions</h3>
+            <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-300/90">
+              <li>Clinical Development (MD/PhD)</li><li>Regulatory Affairs</li><li>Biostatistics &amp; Statistical Programming</li>
+              <li>Clinical Data Management</li><li>Drug Safety / Pharmacovigilance</li><li>Biology / Biomarkers / Translational</li>
+              <li>Medical Writing</li><li>Quality (GxP, CMC)</li><li>Process &amp; Analytical Development</li>
+              <li>CMC / Manufacturing</li><li>Project / Program Management</li><li>IT / Validation / Information Mgmt</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold text-lg">Therapeutic Areas</h3>
+            <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-300/90">
+              <li>Hepatology</li><li>Oncology</li><li>Immunology</li><li>Infectious Disease</li>
+              <li>Metabolic</li><li>Rare Disease</li><li>Gene Therapy</li><li>Biologics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section id="roles" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-extrabold">Typical Roles Filled</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold">Clinical / Medical</h3>
+            <ul class="mt-3 list-disc ml-5 space-y-1 text-slate-300/90">
+              <li>VP / Executive Director, Clinical Development</li>
+              <li>Senior / Medical Director (Hepatology, Oncology, Immunology)</li>
+              <li>Head of Drug Safety (PV)</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold">Confidential / Executive</h3>
+            <ul class="mt-3 list-disc ml-5 space-y-1 text-slate-300/90">
+              <li>VP / Executive Director / functional heads</li>
+              <li>Clinical Development MDs across multiple therapeutic areas</li>
+              <li>Critical builds in growth phases</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Biocruit Solutions -->
+    <section id="why" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-extrabold">Why Biocruit Solutions</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold text-lg">Executive partnership</h3>
+            <p class="mt-2 text-slate-300/90 text-sm">Discreet, senior-level engagement with a hands-on partner. Calibrated search plans and transparent market feedback weekly.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold text-lg">Hard-to-find expertise</h3>
+            <p class="mt-2 text-slate-300/90 text-sm">Deep networks across Clinical Development MDs, Biometrics, Regulatory, and specialized R&amp;D functions to surface the right shortlists fast.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6">
+            <h3 class="font-semibold text-lg">Flexible models</h3>
+            <p class="mt-2 text-slate-300/90 text-sm">Retained, container, project-based, or fractional recruiting—configured to your timeline, confidentiality, and hiring goals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-extrabold">How It Works</h2>
+        <div class="mt-8 grid md:grid-cols-4 gap-6 text-sm">
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6 shadow-sm">
+            <h3 class="font-semibold">1) Calibration</h3>
+            <p class="mt-2 text-slate-300/90">30–45 min intake on scope, stakeholders, competencies, compensation, and timeline.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6 shadow-sm">
+            <h3 class="font-semibold">2) Sourcing</h3>
+            <p class="mt-2 text-slate-300/90">Targeted outreach with weekly slate refresh, notes, and market feedback.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6 shadow-sm">
+            <h3 class="font-semibold">3) Interviews</h3>
+            <p class="mt-2 text-slate-300/90">Structured screens, panel alignment, scorecards; candidate experience stewardship.</p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.03] p-6 shadow-sm">
+            <h3 class="font-semibold">4) Offer &amp; Close</h3>
+            <p class="mt-2 text-slate-300/90">References, compensation alignment, close plan, and start-date coordination.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-white/10 bg-white/[.03] p-6 shadow-sm">
+          <h3 class="font-semibold">Engagement Models</h3>
+          <div class="mt-4 text-slate-300/90">
+            <ul class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-base">
+              <li>Executive search (retained)</li><li>Container search</li><li>Project-based builds</li><li>Confidential replacements</li><li>Full-cycle fractional recruiting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="py-20 relative">
       <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
-        <div>
+        <div class="relative">
           <h2 class="text-3xl font-extrabold">Contact Biocruit Solutions</h2>
           <p class="mt-4 text-slate-300/90">Tell us about your role and timeline. We'll reply with next steps and a sample slate plan.</p>
           <div class="mt-6 text-sm">
@@ -235,21 +394,31 @@
     <footer class="py-10 border-t border-white/10 bg-base-950">
       <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
         <p>© <span id="year"></span> Biocruit Solutions. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a class="hover:underline" href="#">Privacy</a>
+          <a class="hover:underline" href="#">Terms</a>
+        </div>
       </div>
     </footer>
-  </div>
+
+  </div> <!-- /content-layer -->
 
   <!-- Nav & Year -->
   <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
   <!-- Animated dots background -->
   <script>
     (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const canvas = document.getElementById('bgDots');
       const ctx = canvas.getContext('2d', { alpha: true });
       let W, H, dots, rafId;
+
       function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; spawnDots(); }
       function spawnDots(){
         const density = Math.min(120, Math.floor((W*H)/18000));
@@ -267,6 +436,46 @@
         }
         rafId = requestAnimationFrame(step);
       }
-      function init(){ step(); }
+      function init(){ canvas.classList.add('stars-layer'); if(!prefersReduced) step(); }
       resize(); addEventListener('resize', resize, {passive:true}); init();
-      add
+      addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
+    })();
+  </script>
+
+  <!-- Formspree AJAX submit + inline status -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      const btn = document.getElementById('submitBtn');
+
+      async function handleSubmit(e){
+        e.preventDefault();
+        status.className = 'text-sm mt-2 text-slate-300';
+        status.textContent = 'Sending…';
+        status.classList.remove('hidden');
+        btn.disabled = true;
+
+        try{
+          const data = new FormData(form);
+          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+          if(resp.ok){
+            status.className = 'text-sm mt-2 text-emerald-300';
+            status.textContent = 'Thanks—your message has been sent.';
+            form.reset();
+          }else{
+            const json = await resp.json().catch(()=>({}));
+            throw new Error(json.errors?.[0]?.message || 'Something went wrong. Please email gordon@biocruitsolutions.com.');
+          }
+        }catch(err){
+          status.className = 'text-sm mt-2 text-rose-300';
+          status.textContent = err.message;
+        }finally{
+          btn.disabled = false;
+        }
+      }
+      form.addEventListener('submit', handleSubmit);
+    })();
+  </script>
+</body>
+</html>
