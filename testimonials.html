@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Testimonials — Biocruit Solutions</title>
-  <meta name="description" content="What clients say about partnering with Biocruit Solutions for biotech & life sciences executive recruiting." />
+  <meta name="description" content="What leaders in biotech and life sciences say about working with Biocruit Solutions." />
   <meta property="og:title" content="Testimonials — Biocruit Solutions" />
   <meta property="og:description" content="Client testimonials for Biocruit Solutions." />
   <meta property="og:type" content="website" />
@@ -35,10 +35,13 @@
 
   <style>
     html{scroll-behavior:smooth}
+
+    /* ---------- LAYERING ---------- */
     .stars-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
     .decor-layer { position: fixed; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen; }
     .content-layer { position: relative; z-index: 10; }
 
+    /* ---------- BACKGROUND (Option B) ---------- */
     #bgDots{
       width:100vw;height:100vh;display:block;
       background:
@@ -47,6 +50,7 @@
         linear-gradient(180deg, #173b6d, #102c54);
     }
 
+    /* ---------- GLASS CARD ---------- */
     .glass{
       background:rgba(255,255,255,0.06);
       border:1px solid rgba(255,255,255,0.08);
@@ -54,6 +58,7 @@
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
+    /* ---------- ANIMATIONS ---------- */
     @keyframes floatY{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(.5rem,-1.25rem,0) rotate(2deg)}}
     @keyframes floatXY{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-.75rem,.75rem,0)}}
     @keyframes slowSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
@@ -61,6 +66,7 @@
     .float-slower{animation:floatXY 22s ease-in-out infinite alternate;}
     .spin-slowest{animation:slowSpin 90s linear infinite;}
 
+    /* ---------- DECORATIVE SVG POSITIONS ---------- */
     .dna-top-right{position:fixed;top:1.75rem;right:1.25rem;width:min(28vw,320px);opacity:.25;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
     .hex-upper-right{position:fixed;top:24vh;right:12vw;width:min(22vw,260px);opacity:.18;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
     .molecule-bottom-left-global{position:fixed;left:1rem;bottom:5.5rem;width:min(34vw,360px);opacity:.22;filter:drop-shadow(0 3px 10px rgba(24,69,150,.25))}
@@ -69,15 +75,78 @@
 </head>
 <body class="bg-base-950 text-slate-100">
 
-  <!-- Background -->
+  <!-- Stars canvas (deepest layer) -->
   <canvas id="bgDots" class="stars-layer" aria-hidden="true"></canvas>
 
-  <!-- Decorative SVGs -->
+  <!-- Decorative SVGs (same as index) -->
   <div class="decor-layer" aria-hidden="true">
-    <!-- (DNA, Hex, Molecule SVGs remain unchanged from before) -->
+    <!-- DNA Helix -->
+    <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none">
+      <defs>
+        <linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/>
+        </linearGradient>
+      </defs>
+      <path d="M30 30 C160 90, 80 210, 200 270
+               M200 30 C80 90, 160 210, 30 270
+               M30 270 C160 330, 80 450, 200 510
+               M200 270 C80 330, 160 450, 30 510"
+            stroke="url(#dnaG)" stroke-width="4" opacity="0.8"/>
+      <g stroke="#99c2ff" opacity="0.6">
+        <line x1="60" y1="70"  x2="170" y2="90"/>
+        <line x1="50" y1="120" x2="180" y2="140"/>
+        <line x1="60" y1="170" x2="170" y2="190"/>
+        <line x1="50" y1="220" x2="180" y2="240"/>
+        <line x1="60" y1="320" x2="170" y2="340"/>
+        <line x1="50" y1="370" x2="180" y2="390"/>
+        <line x1="60" y1="420" x2="170" y2="440"/>
+        <line x1="50" y1="470" x2="180" y2="490"/>
+      </g>
+    </svg>
+
+    <!-- Hex lattice -->
+    <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none">
+      <g stroke="#66d6ff" stroke-width="1.6" opacity="0.55">
+        <path d="M50 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M100 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M150 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M75 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M125 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M175 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+      </g>
+      <circle cx="62" cy="44" r="2.2" fill="#66d6ff"/>
+      <circle cx="212" cy="44" r="2.2" fill="#66d6ff"/>
+      <circle cx="137" cy="87" r="2.2" fill="#66d6ff"/>
+    </svg>
+
+    <!-- Global molecule -->
+    <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none">
+      <defs>
+        <radialGradient id="molG" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#a8cdfc"/><stop offset="100%" stop-color="#5cb6ff"/>
+        </radialGradient>
+      </defs>
+      <g stroke="#87c6ff" stroke-width="2" opacity=".65">
+        <line x1="40"  y1="120" x2="120" y2="80"/>
+        <line x1="120" y1="80" x2="170" y2="120"/>
+        <line x1="170" y1="120" x2="220" y2="90"/>
+        <line x1="220" y1="90" x2="280" y2="110"/>
+        <line x1="120" y1="80" x2="100" y2="40"/>
+        <line x1="170" y1="120" x2="160" y2="170"/>
+      </g>
+      <circle cx="40" cy="120" r="10" fill="url(#molG)"/>
+      <circle cx="120" cy="80" r="12" fill="url(#molG)"/>
+      <circle cx="170" cy="120" r="11" fill="url(#molG)"/>
+      <circle cx="220" cy="90"  r="9"  fill="url(#molG)"/>
+      <circle cx="280" cy="110" r="10" fill="url(#molG)"/>
+      <circle cx="100" cy="40"  r="7"  fill="url(#molG)"/>
+      <circle cx="160" cy="170" r="8"  fill="url(#molG)"/>
+    </svg>
   </div>
 
+  <!-- Everything else sits above the decorative layer -->
   <div class="content-layer">
+
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-base-950/70 backdrop-blur border-b border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -91,9 +160,21 @@
           <a href="index.html#roles" class="hover:text-brand-300">Roles</a>
           <a href="index.html#process" class="hover:text-brand-300">Process</a>
           <a href="index.html#why" class="hover:text-brand-300">Why us</a>
-          <a href="testimonials.html" class="hover:text-brand-300 font-semibold">Testimonials</a>
+          <a href="testimonials.html" class="hover:text-brand-300 font-semibold">Client Testimonials</a>
           <a href="index.html#contact" class="hover:text-brand-300">Contact</a>
         </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/15" aria-label="Open menu">☰</button>
+      </div>
+      <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-base-950">
+        <div class="px-4 py-3 grid gap-3 text-sm">
+          <a href="index.html#about" class="hover:text-brand-300">About</a>
+          <a href="index.html#specialties" class="hover:text-brand-300">Specialties</a>
+          <a href="index.html#roles" class="hover:text-brand-300">Roles</a>
+          <a href="index.html#process" class="hover:text-brand-300">Process</a>
+          <a href="index.html#why" class="hover:text-brand-300">Why us</a>
+          <a href="testimonials.html" class="hover:text-brand-300">Client Testimonials</a>
+          <a href="index.html#contact" class="hover:text-brand-300">Contact</a>
+        </div>
       </div>
     </header>
 
@@ -107,7 +188,7 @@
       </div>
     </section>
 
-    <!-- Testimonials list -->
+    <!-- Testimonials -->
     <section class="pb-24">
       <div class="max-w-4xl mx-auto px-4 space-y-8">
 
@@ -138,25 +219,49 @@ Throughout his tenure supporting us, Gordon consistently rose to the challenge o
         <p>© <span id="year"></span> Biocruit Solutions. All rights reserved.</p>
         <div class="flex items-center gap-4">
           <a class="hover:underline" href="index.html#contact">Contact</a>
-          <a class="hover:underline" href="index.html#privacy">Privacy</a>
+          <a class="hover:underline" href="#">Privacy</a>
         </div>
       </div>
     </footer>
-  </div>
 
-  <!-- Year -->
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </div> <!-- /content-layer -->
 
-  <!-- Animated dots background -->
+  <!-- Nav & Year -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Animated dots background (same as index) -->
   <script>
     (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const canvas = document.getElementById('bgDots');
       const ctx = canvas.getContext('2d', { alpha: true });
       let W, H, dots, rafId;
+
       function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; spawnDots(); }
-      function spawnDots(){ const density = Math.min(120, Math.floor((W*H)/18000)); dots = Array.from({length: density}, () => ({x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.4, a: Math.random()*2*Math.PI, s: Math.random()*0.35+0.12})); }
-      function step(){ ctx.clearRect(0,0,W,H); ctx.fillStyle='rgba(255,255,255,0.6)'; for(const p of dots){ p.x += Math.cos(p.a)*p.s; p.y += Math.sin(p.a)*p.s; p.a += (Math.random()-0.5)*0.02; if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10; if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); } rafId = requestAnimationFrame(step); }
-      resize(); addEventListener('resize', resize, {passive:true}); step();
+      function spawnDots(){
+        const density = Math.min(120, Math.floor((W*H)/18000));
+        dots = Array.from({length: density}, () => ({
+          x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.4,
+          a: Math.random()*2*Math.PI, s: Math.random()*0.35+0.12
+        }));
+      }
+      function step(){
+        ctx.clearRect(0,0,W,H); ctx.fillStyle='rgba(255,255,255,0.6)';
+        for(const p of dots){
+          p.x += Math.cos(p.a)*p.s; p.y += Math.sin(p.a)*p.s; p.a += (Math.random()-0.5)*0.02;
+          if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10; if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10;
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+        }
+        rafId = requestAnimationFrame(step);
+      }
+
+      function init(){ canvas.classList.add('stars-layer'); if (!prefersReduced) step(); }
+      resize(); addEventListener('resize', resize, {passive:true}); init();
       addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
     })();
   </script>
