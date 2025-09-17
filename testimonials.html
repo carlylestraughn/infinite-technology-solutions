@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimonials — Biocruit Solutions</title>
+  <meta name="description" content="What clients say about Biocruit Solutions." />
+  <link rel="icon" href="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:'#eef7ff',100:'#d9ecff',200:'#bfe0ff',300:'#93ccff',
+              400:'#5bb0ff',500:'#2f95ff',600:'#0f79e6',
+              700:'#0a62bf',800:'#0c529c',900:'#0f447e'
+            },
+            base: { 950: '#071426', 900: '#0b1a33' }
+          },
+          boxShadow: { 'glass': '0 10px 30px rgba(2,12,27,0.25)' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    .stars-layer { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .decor-layer { position: fixed; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen; }
+    .content-layer { position: relative; z-index: 10; }
+    #bgDots{
+      width:100vw;height:100vh;display:block;
+      background:
+        radial-gradient(1200px 800px at 20% 0%, rgba(27,99,191,0.30), transparent 60%),
+        radial-gradient(1000px 700px at 80% 10%, rgba(18,80,160,0.28), transparent 60%),
+        linear-gradient(180deg, #173b6d, #102c54);
+    }
+    .glass{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+    @keyframes floatY{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(.5rem,-1.25rem,0) rotate(2deg)}}
+    @keyframes floatXY{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-.75rem,.75rem,0)}}
+    @keyframes slowSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+    .float-slow{animation:floatY 14s ease-in-out infinite alternate;}
+    .float-slower{animation:floatXY 22s ease-in-out infinite alternate;}
+    .spin-slowest{animation:slowSpin 90s linear infinite;}
+    .dna-top-right{position:fixed;top:1.75rem;right:1.25rem;width:min(28vw,320px);opacity:.25;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
+    .hex-upper-right{position:fixed;top:24vh;right:12vw;width:min(22vw,260px);opacity:.18;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
+    .molecule-bottom-left-global{position:fixed;left:1rem;bottom:5.5rem;width:min(34vw,360px);opacity:.22;filter:drop-shadow(0 3px 10px rgba(24,69,150,.25))}
+    @media (max-width:768px){ .molecule-bottom-left-global{display:none;} }
+  </style>
+</head>
+<body class="bg-base-950 text-slate-100">
+  <canvas id="bgDots" class="stars-layer" aria-hidden="true"></canvas>
+
+  <div class="decor-layer">
+    <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none" aria-hidden="true">
+      <defs><linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/></linearGradient></defs>
+      <path d="M30 30 C160 90, 80 210, 200 270 M200 30 C80 90, 160 210, 30 270 M30 270 C160 330, 80 450, 200 510 M200 270 C80 330, 160 450, 30 510"
+            stroke="url(#dnaG)" stroke-width="4" opacity="0.8"/>
+      <g stroke="#99c2ff" opacity="0.6">
+        <line x1="60" y1="70"  x2="170" y2="90"/><line x1="50" y1="120" x2="180" y2="140"/>
+        <line x1="60" y1="170" x2="170" y2="190"/><line x1="50" y1="220" x2="180" y2="240"/>
+        <line x1="60" y1="320" x2="170" y2="340"/><line x1="50" y1="370" x2="180" y2="390"/>
+        <line x1="60" y1="420" x2="170" y2="440"/><line x1="50" y1="470" x2="180" y2="490"/>
+      </g>
+    </svg>
+    <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none" aria-hidden="true">
+      <g stroke="#66d6ff" stroke-width="1.6" opacity="0.55">
+        <path d="M50 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M100 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M150 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M75 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M125 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M175 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+      </g>
+      <circle cx="62" cy="44" r="2.2" fill="#66d6ff"/><circle cx="212" cy="44" r="2.2" fill="#66d6ff"/><circle cx="137" cy="87" r="2.2" fill="#66d6ff"/>
+    </svg>
+    <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
+      <defs><radialGradient id="molG" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#a8cdfc"/><stop offset="100%" stop-color="#5cb6ff"/></radialGradient></defs>
+      <g stroke="#87c6ff" stroke-width="2" opacity=".65">
+        <line x1="40" y1="120" x2="120" y2="80"/><line x1="120" y1="80" x2="170" y2="120"/>
+        <line x1="170" y1="120" x2="220" y2="90"/><line x1="220" y1="90" x2="280" y2="110"/>
+        <line x1="120" y1="80" x2="100" y2="40"/><line x1="170" y1="120" x2="160" y2="170"/>
+      </g>
+      <circle cx="40" cy="120" r="10" fill="url(#molG)"/><circle cx="120" cy="80" r="12" fill="url(#molG)"/>
+      <circle cx="170" cy="120" r="11" fill="url(#molG)"/><circle cx="220" cy="90" r="9" fill="url(#molG)"/>
+      <circle cx="280" cy="110" r="10" fill="url(#molG)"/><circle cx="100" cy="40" r="7" fill="url(#molG)"/><circle cx="160" cy="170" r="8" fill="url(#molG)"/>
+    </svg>
+  </div>
+
+  <div class="content-layer">
+    <!-- HEADER (same as home) -->
+    <header class="sticky top-0 z-50 bg-base-950/70 backdrop-blur border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="index.html#home" class="flex items-center gap-3 font-semibold">
+          <img src="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" alt="Biocruit Solutions logo" class="h-10 w-10 rounded-lg object-contain" />
+          <span class="text-xl">Biocruit Solutions</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="index.html#about" class="hover:text-brand-300">About</a>
+          <a href="index.html#specialties" class="hover:text-brand-300">Specialties</a>
+          <a href="index.html#roles" class="hover:text-brand-300">Roles</a>
+          <a href="index.html#process" class="hover:text-brand-300">Process</a>
+          <a href="index.html#why" class="hover:text-brand-300">Why us</a>
+          <a href="testimonials.html" class="hover:text-brand-300 font-semibold">Testimonials</a>
+          <a href="index.html#contact" class="hover:text-brand-300">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/15" aria-label="Open menu">☰</button>
+      </div>
+      <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-base-950">
+        <div class="px-4 py-3 grid gap-3 text-sm">
+          <a href="index.html#about" class="hover:text-brand-300">About</a>
+          <a href="index.html#specialties" class="hover:text-brand-300">Specialties</a>
+          <a href="index.html#roles" class="hover:text-brand-300">Roles</a>
+          <a href="index.html#process" class="hover:text-brand-300">Process</a>
+          <a href="index.html#why" class="hover:text-brand-300">Why us</a>
+          <a href="testimonials.html" class="hover:text-brand-300 font-semibold">Testimonials</a>
+          <a href="index.html#contact" class="hover:text-brand-300">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">Client Testimonials</h1>
+        <p class="mt-4 text-lg text-slate-300/90 max-w-3xl">
+          What leaders in biotech and life sciences say about working with Biocruit Solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS GRID -->
+    <section class="pb-24">
+      <div class="max-w-7xl mx-auto px-4 grid gap-8 md:grid-cols-2">
+        <!-- Testimonial #1 (Traci Carrithers) -->
+        <article class="glass rounded-2xl border border-white/10 p-6">
+          <div class="prose prose-invert max-w-none">
+            <p class="text-slate-100 text-lg leading-relaxed">
+              <em>
+              At Gilead, I had the privilege of working with Gordon Straughn for more than a decade while he served as our R&amp;D recruiting partner.
+              During my 23+ years supporting the CSO and working closely with the R&amp;D leadership team, the company experienced an extraordinary period
+              of growth and expansion into new therapeutic areas. Gordon was instrumental in building and strengthening our R&amp;D organization throughout this time.
+              </em>
+            </p>
+            <p class="mt-4 text-slate-100 text-lg leading-relaxed">
+              <em>
+              What truly set Gordon apart was his ability to understand the nuances of each role – across research, clinical, regulatory and CMC – and to consistently
+              match the right candidate to the right position. He has a remarkable ability for reading people and assessing their capabilities, combined with a deep
+              understanding of the scientific and operational needs across R&amp;D.
+              </em>
+            </p>
+            <p class="mt-4 text-slate-100 text-lg leading-relaxed">
+              <em>
+              Throughout his tenure supporting us, Gordon consistently rose to the challenge of our evolving hiring demands, delivering top-tier talent while ensuring
+              strong organizational fit. His partnership was invaluable in shaping the teams that fueled Gilead’s success.
+              </em>
+            </p>
+            <p class="mt-6 font-semibold text-slate-200">
+              Traci Carrithers<br/>
+              Former, Executive Coordinator | Gilead Sciences<br/>
+              Vice President, Operations | NextQuest LLC
+            </p>
+          </div>
+
+          <!-- Screenshot (optional/secondary to the accessible text above) -->
+          <figure class="mt-6">
+            <!-- Replace the src with the URL where you host the screenshot image -->
+            <img src="YOUR_SCREENSHOT_URL.jpg"
+                 alt="Screenshot of testimonial from Traci Carrithers"
+                 class="rounded-xl border border-white/10 w-full object-contain" />
+            <figcaption class="sr-only">Screenshot of Traci Carrithers testimonial</figcaption>
+          </figure>
+        </article>
+
+        <!-- Testimonial #2 (placeholder) -->
+        <article class="glass rounded-2xl border border-white/10 p-6">
+          <blockquote class="text-slate-100 text-lg leading-relaxed">
+            “Gordon is a trusted partner for complex, confidential builds. His market insight and candidate stewardship set him apart.”
+          </blockquote>
+          <p class="mt-6 font-semibold text-slate-200">VP, Clinical Development — Bay Area Biotech</p>
+        </article>
+
+        <!-- Testimonial #3 (placeholder) -->
+        <article class="glass rounded-2xl border border-white/10 p-6">
+          <blockquote class="text-slate-100 text-lg leading-relaxed">
+            “We needed senior Biometrics leaders fast. Gordon delivered a strong slate quickly and helped us close our top choice.”
+          </blockquote>
+          <p class="mt-6 font-semibold text-slate-200">Head of Biometrics — Oncology Biopharma</p>
+        </article>
+
+        <!-- Testimonial #4 (placeholder) -->
+        <article class="glass rounded-2xl border border-white/10 p-6">
+          <blockquote class="text-slate-100 text-lg leading-relaxed">
+            “Exceptional understanding of regulatory and CMC hiring—Gordon consistently found the right profiles for our growth phase.”
+          </blockquote>
+          <p class="mt-6 font-semibold text-slate-200">SVP, Regulatory &amp; CMC — Gene Therapy Company</p>
+        </article>
+      </div>
+
+      <!-- CTA -->
+      <div class="max-w-7xl mx-auto px-4 mt-12">
+        <a href="index.html#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">
+          Start a search
+        </a>
+        <a href="index.html#about" class="ml-3 inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">
+          Learn more
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 border-t border-white/10 bg-base-950">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>© <span id="year"></span> Biocruit Solutions. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a class="hover:underline" href="index.html#contact">Contact</a>
+          <a class="hover:underline" href="index.html">Home</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    (function () {
+      const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canvas = document.getElementById('bgDots');
+      const ctx = canvas.getContext('2d', { alpha: true });
+      let W, H, dots, rafId;
+
+      function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight; spawnDots(); }
+      function spawnDots(){
+        const density = Math.min(120, Math.floor((W*H)/18000));
+        dots = Array.from({length: density}, () => ({
+          x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5+0.4,
+          a: Math.random()*2*Math.PI, s: Math.random()*0.35+0.12
+        }));
+      }
+      function step(){
+        ctx.clearRect(0,0,W,H); ctx.fillStyle='rgba(255,255,255,0.6)';
+        for(const p of dots){
+          p.x += Math.cos(p.a)*p.s; p.y += Math.sin(p.a)*p.s; p.a += (Math.random()-0.5)*0.02;
+          if(p.x<-10)p.x=W+10; if(p.x>W+10)p.x=-10; if(p.y<-10)p.y=H+10; if(p.y>H+10)p.y=-10;
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+        }
+        rafId = requestAnimationFrame(step);
+      }
+      function init(){ canvas.classList.add('stars-layer'); if(!prefersReduced) step(); }
+      resize(); addEventListener('resize', resize, {passive:true}); init();
+      addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
+    })();
+  </script>
+</body>
+</html>
