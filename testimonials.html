@@ -78,8 +78,6 @@
       overflow: hidden;
       transition: max-height .3s ease;
     }
-    .clamp-10{-webkit-line-clamp:10;}
-    .clamp-11{-webkit-line-clamp:11;}
     .clamp-12{-webkit-line-clamp:12;}
     .expanded{-webkit-line-clamp:unset !important;}
   </style>
@@ -89,24 +87,59 @@
   <!-- Stars canvas (deepest layer) -->
   <canvas id="bgDots" class="stars-layer" aria-hidden="true"></canvas>
 
-  <!-- Biotech decorative SVGs -->
+  <!-- Biotech decorative SVGs (now includes molecule) -->
   <div class="decor-layer">
+    <!-- DNA Helix -->
     <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none" aria-hidden="true">
-      <defs><linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/></linearGradient></defs>
-      <path d="M30 30 C160 90, 80 210, 200 270
-               M200 30 C80 90, 160 210, 30 270
-               M30 270 C160 330, 80 450, 200 510
-               M200 270 C80 330, 160 450, 30 510"
-            stroke="url(#dnaG)" stroke-width="4" opacity="0.8"/>
+      <defs>
+        <linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/>
+        </linearGradient>
+      </defs>
+    <path d="M30 30 C160 90, 80 210, 200 270
+             M200 30 C80 90, 160 210, 30 270
+             M30 270 C160 330, 80 450, 200 510
+             M200 270 C80 330, 160 450, 30 510"
+          stroke="url(#dnaG)" stroke-width="4" opacity="0.8"/>
     </svg>
 
+    <!-- Hex lattice -->
     <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none" aria-hidden="true">
       <g stroke="#66d6ff" stroke-width="1.6" opacity="0.55">
         <path d="M50 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
         <path d="M100 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
         <path d="M150 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M75 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M125 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M175 73 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
       </g>
+      <circle cx="62" cy="44" r="2.2" fill="#66d6ff"/>
+      <circle cx="212" cy="44" r="2.2" fill="#66d6ff"/>
+      <circle cx="137" cy="87" r="2.2" fill="#66d6ff"/>
+    </svg>
+
+    <!-- Global molecule (ADDED) -->
+    <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
+      <defs>
+        <radialGradient id="molG" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#a8cdfc"/><stop offset="100%" stop-color="#5cb6ff"/>
+        </radialGradient>
+      </defs>
+      <g stroke="#87c6ff" stroke-width="2" opacity=".65">
+        <line x1="40"  y1="120" x2="120" y2="80"/>
+        <line x1="120" y1="80" x2="170" y2="120"/>
+        <line x1="170" y1="120" x2="220" y2="90"/>
+        <line x1="220" y1="90" x2="280" y2="110"/>
+        <line x1="120" y1="80" x2="100" y2="40"/>
+        <line x1="170" y1="120" x2="160" y2="170"/>
+      </g>
+      <circle cx="40" cy="120" r="10" fill="url(#molG)"/>
+      <circle cx="120" cy="80"  r="12" fill="url(#molG)"/>
+      <circle cx="170" cy="120" r="11" fill="url(#molG)"/>
+      <circle cx="220" cy="90"  r="9"  fill="url(#molG)"/>
+      <circle cx="280" cy="110" r="10" fill="url(#molG)"/>
+      <circle cx="100" cy="40"  r="7"  fill="url(#molG)"/>
+      <circle cx="160" cy="170" r="8"  fill="url(#molG)"/>
     </svg>
   </div>
 
@@ -152,14 +185,9 @@
             <p class="mt-4">What truly set Gordon apart was his ability to understand the nuances of each role – across research, clinical, regulatory and CMC – and to consistently match the right candidate to the right position. He has a remarkable ability for reading people and assessing their capabilities, combined with a deep understanding of the scientific and operational needs across R&amp;D.</p>
             <p class="mt-4">Throughout his tenure supporting us, Gordon consistently rose to the challenge of our evolving hiring demands, delivering top-tier talent while ensuring strong organizational fit. His partnership was invaluable in shaping the teams that fueled Gilead’s success.</p>
           </div>
-
-          <!-- Read more aligned right, directly below text -->
           <div class="mt-3 text-right">
-            <button class="toggle-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 text-sm">
-              Read more
-            </button>
+            <button class="toggle-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 text-sm">Read more</button>
           </div>
-
           <div class="mt-5 border-t border-white/10 pt-4 text-sm text-slate-300/90">
             <div class="font-medium text-slate-100">Traci Carrithers</div>
             <div>Former Executive Coordinator | Gilead Sciences</div>
@@ -174,13 +202,9 @@
             <p class="mt-4">Gordon stood out by taking the time to understand my background and career goals, while also providing deep insight into the biopharma landscape. His guidance, transparency, and advocacy were instrumental in helping me secure a role as the Vice President, R&amp;D at IDbyDNA.</p>
             <p class="mt-4">If you’re seeking a recruiter who combines industry expertise with a genuine commitment to candidate success, I strongly recommend connecting with Gordon Straughn.</p>
           </div>
-
           <div class="mt-3 text-right">
-            <button class="toggle-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 text-sm">
-              Read more
-            </button>
+            <button class="toggle-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 text-sm">Read more</button>
           </div>
-
           <div class="mt-5 border-t border-white/10 pt-4 text-sm text-slate-300/90">
             <div class="font-medium text-slate-100">Susan Daniels</div>
             <div>Former Vice President, R&amp;D | IDbyDNA</div>
@@ -194,13 +218,9 @@
             <p class="mt-4">What set Gordon apart was not only his deep knowledge of the biopharma landscape, but also his personalized approach and commitment to understanding what was going to make a sustainable match between my future employer and me. Gordon took the time to understand my unique background, aspirations, and strengths, and then, as he matched me with opportunities that looked like the right fit, helped me to test that fit through the process. He was communicative, transparent, and supportive at every step — while preparing me for interviews, providing insight into company culture, or advocating on my behalf with hiring teams — and he made himself available not only during the hiring process, but afterward. I have stayed in touch with Gordon many years and several jobs after we first met, because he makes that kind of relationship-building commitment to the clients and candidates he represents.</p>
             <p class="mt-4">Thanks to Gordon’s professionalism, diligence, and genuine long-term commitment to my success, I was able to secure a position that has advanced both my career and personal growth — a job that I truly loved at an organization where I was able to have huge positive impact! I would wholeheartedly recommend Gordon Straughn to any professional seeking to navigate the competitive biopharma job market. He inspires total confidence, because he's a true expert at bringing the right people into the right roles.</p>
           </div>
-
           <div class="mt-3 text-right">
-            <button class="toggle-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 text-sm">
-              Read more
-            </button>
+            <button class="toggle-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/15 hover:bg-white/5 text-sm">Read more</button>
           </div>
-
           <div class="mt-5 border-t border-white/10 pt-4 text-sm text-slate-300/90">
             <div class="font-medium text-slate-100">Lisa Boyette, MD, PhD</div>
             <div>Former Liver Fibrosis Disease Area Lead &amp; Executive Director, Clinical Development | Gilead Sciences</div>
@@ -228,25 +248,22 @@
   </div>
 
   <script>
-    // Footer year
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Toggle clamp per card
+    // Expand/Collapse per card
     document.querySelectorAll('.glass').forEach(card => {
       const btn = card.querySelector('.toggle-btn');
       const body = card.querySelector('.testimonial-body');
       btn.addEventListener('click', () => {
-        const isExpanded = body.classList.toggle('expanded');
-        btn.textContent = isExpanded ? 'Collapse' : 'Read more';
-        // Optional: scroll to keep the card in view when expanding
-        if (isExpanded) {
-          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+        const expanded = body.classList.toggle('expanded');
+        btn.textContent = expanded ? 'Collapse' : 'Read more';
+        if (expanded) card.scrollIntoView({behavior:'smooth', block:'nearest'});
       });
     });
   </script>
 
-  <!-- Animated dots background -->
+  <!-- Animated dots -->
   <script>
     (function () {
       const canvas = document.getElementById('bgDots');
