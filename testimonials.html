@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Testimonials — Biocruit Solutions</title>
+  <title>Client Testimonials — Biocruit Solutions</title>
   <meta name="description" content="What leaders in biotech and life sciences say about working with Biocruit Solutions." />
-  <meta property="og:title" content="Testimonials — Biocruit Solutions" />
-  <meta property="og:description" content="Client testimonials for Biocruit Solutions." />
+  <meta property="og:title" content="Client Testimonials — Biocruit Solutions" />
+  <meta property="og:description" content="What leaders in biotech and life sciences say about working with Biocruit Solutions." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/testimonials.html" />
   <meta property="og:image" content="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" />
@@ -41,7 +41,7 @@
     .decor-layer { position: fixed; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: screen; }
     .content-layer { position: relative; z-index: 10; }
 
-    /* ---------- BACKGROUND (Option B) ---------- */
+    /* ---------- BACKGROUND CANVAS (STARS) ---------- */
     #bgDots{
       width:100vw;height:100vh;display:block;
       background:
@@ -58,7 +58,7 @@
       box-shadow:0 10px 30px rgba(0,0,0,0.25);
     }
 
-    /* ---------- ANIMATIONS ---------- */
+    /* ---------- BIOTECH SVG ANIMATIONS ---------- */
     @keyframes floatY{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(.5rem,-1.25rem,0) rotate(2deg)}}
     @keyframes floatXY{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-.75rem,.75rem,0)}}
     @keyframes slowSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
@@ -66,7 +66,6 @@
     .float-slower{animation:floatXY 22s ease-in-out infinite alternate;}
     .spin-slowest{animation:slowSpin 90s linear infinite;}
 
-    /* ---------- DECORATIVE SVG POSITIONS ---------- */
     .dna-top-right{position:fixed;top:1.75rem;right:1.25rem;width:min(28vw,320px);opacity:.25;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
     .hex-upper-right{position:fixed;top:24vh;right:12vw;width:min(22vw,260px);opacity:.18;filter:drop-shadow(0 2px 8px rgba(24,69,150,.25))}
     .molecule-bottom-left-global{position:fixed;left:1rem;bottom:5.5rem;width:min(34vw,360px);opacity:.22;filter:drop-shadow(0 3px 10px rgba(24,69,150,.25))}
@@ -78,10 +77,10 @@
   <!-- Stars canvas (deepest layer) -->
   <canvas id="bgDots" class="stars-layer" aria-hidden="true"></canvas>
 
-  <!-- Decorative SVGs (same as index) -->
-  <div class="decor-layer" aria-hidden="true">
+  <!-- Decorative SVGs (same as main) -->
+  <div class="decor-layer">
     <!-- DNA Helix -->
-    <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none">
+    <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none" aria-hidden="true">
       <defs>
         <linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/>
@@ -105,7 +104,7 @@
     </svg>
 
     <!-- Hex lattice -->
-    <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none">
+    <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none" aria-hidden="true">
       <g stroke="#66d6ff" stroke-width="1.6" opacity="0.55">
         <path d="M50 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
         <path d="M100 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
@@ -119,8 +118,8 @@
       <circle cx="137" cy="87" r="2.2" fill="#66d6ff"/>
     </svg>
 
-    <!-- Global molecule -->
-    <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none">
+    <!-- Molecule -->
+    <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
       <defs>
         <radialGradient id="molG" cx="50%" cy="50%" r="60%">
           <stop offset="0%" stop-color="#a8cdfc"/><stop offset="100%" stop-color="#5cb6ff"/>
@@ -144,9 +143,8 @@
     </svg>
   </div>
 
-  <!-- Everything else sits above the decorative layer -->
+  <!-- Content -->
   <div class="content-layer">
-
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-base-950/70 backdrop-blur border-b border-white/10">
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -160,7 +158,8 @@
           <a href="index.html#roles" class="hover:text-brand-300">Roles</a>
           <a href="index.html#process" class="hover:text-brand-300">Process</a>
           <a href="index.html#why" class="hover:text-brand-300">Why us</a>
-          <a href="testimonials.html" class="hover:text-brand-300 font-semibold">Client Testimonials</a>
+          <!-- Not bold -->
+          <a href="testimonials.html" class="hover:text-brand-300">Testimonials</a>
           <a href="index.html#contact" class="hover:text-brand-300">Contact</a>
         </nav>
         <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/15" aria-label="Open menu">☰</button>
@@ -172,62 +171,68 @@
           <a href="index.html#roles" class="hover:text-brand-300">Roles</a>
           <a href="index.html#process" class="hover:text-brand-300">Process</a>
           <a href="index.html#why" class="hover:text-brand-300">Why us</a>
-          <a href="testimonials.html" class="hover:text-brand-300">Client Testimonials</a>
+          <!-- Not bold -->
+          <a href="testimonials.html" class="hover:text-brand-300">Testimonials</a>
           <a href="index.html#contact" class="hover:text-brand-300">Contact</a>
         </div>
       </div>
     </header>
 
-    <!-- Page header -->
-    <section class="py-16 md:py-20">
-      <div class="max-w-4xl mx-auto px-4">
-        <h1 class="text-4xl md:text-5xl font-black tracking-tight">Client Testimonials</h1>
-        <p class="mt-4 text-slate-300/90 max-w-prose">
+    <!-- Page intro -->
+    <section class="relative">
+      <div class="max-w-7xl mx-auto px-4 py-16 md:py-20">
+        <h1 class="text-3xl md:text-4xl font-extrabold">Client Testimonials</h1>
+        <p class="mt-3 text-slate-300/90 text-lg max-w-3xl">
           What leaders in biotech and life sciences say about working with Biocruit Solutions.
         </p>
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials grid -->
     <section class="pb-24">
-      <div class="max-w-6xl mx-auto px-4">
-        <!-- Two-column responsive grid; cards size to content -->
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <!-- Traci Carrithers -->
-          <article class="glass rounded-2xl border border-white/10 p-6 md:p-8">
-            <blockquote class="text-slate-100 leading-relaxed">
-              <p class="whitespace-pre-line">
-At Gilead, I had the privilege of working with Gordon Straughn for more than a decade while he served as our R&amp;D recruiting partner. During my 23+ years supporting the CSO and working closely with the R&amp;D leadership team, the company experienced an extraordinary period of growth and expansion into new therapeutic areas. Gordon was instrumental in building and strengthening our R&amp;D organization throughout this time.
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-6">
+        <!-- Traci Carrithers -->
+        <article class="glass rounded-2xl border border-white/10 p-6">
+          <p class="text-slate-100/95 leading-relaxed">
+            At Gilead, I had the privilege of working with Gordon Straughn for more than a decade while he served as our R&amp;D recruiting partner. During my 23+ years supporting the CSO and working closely with the R&amp;D leadership team, the company experienced an extraordinary period of growth and expansion into new therapeutic areas. Gordon was instrumental in building and strengthening our R&amp;D organization throughout this time.
+          </p>
+          <p class="text-slate-100/95 leading-relaxed mt-4">
+            What truly set Gordon apart was his ability to understand the nuances of each role – across research, clinical, regulatory and CMC – and to consistently match the right candidate to the right position. He has a remarkable ability for reading people and assessing their capabilities, combined with a deep understanding of the scientific and operational needs across R&amp;D.
+          </p>
+          <p class="text-slate-100/95 leading-relaxed mt-4">
+            Throughout his tenure supporting us, Gordon consistently rose to the challenge of our evolving hiring demands, delivering top-tier talent while ensuring strong organizational fit. His partnership was invaluable in shaping the teams that fueled Gilead’s success.
+          </p>
+          <div class="mt-5 border-t border-white/10 pt-4 text-sm text-slate-300/90">
+            <div class="font-medium text-slate-100">Traci Carrithers</div>
+            <div>Former Executive Coordinator | Gilead Sciences</div>
+            <div>Vice President, Operations | NextQuest LLC</div>
+          </div>
+        </article>
 
-What truly set Gordon apart was his ability to understand the nuances of each role – across research, clinical, regulatory and CMC – and to consistently match the right candidate to the right position. He has a remarkable ability for reading people and assessing their capabilities, combined with a deep understanding of the scientific and operational needs across R&amp;D.
+        <!-- Susan Daniels -->
+        <article class="glass rounded-2xl border border-white/10 p-6">
+          <p class="text-slate-100/95 leading-relaxed">
+            I had the pleasure of working with Gordon Straughn during a recent career transition, and I can’t recommend him highly enough. As a molecular diagnostic and genomic product development expert, I was looking for the right leadership opportunity to align with my experience and aspirations.
+          </p>
+          <p class="text-slate-100/95 leading-relaxed mt-4">
+            Gordon stood out by taking the time to understand my background and career goals, while also providing deep insight into the biopharma landscape. His guidance, transparency, and advocacy were instrumental in helping me secure a role as the Vice President, R&amp;D at IDbyDNA.
+          </p>
+          <p class="text-slate-100/95 leading-relaxed mt-4">
+            If you’re seeking a recruiter who combines industry expertise with a genuine commitment to candidate success, I strongly recommend connecting with Gordon Straughn.
+          </p>
+          <div class="mt-5 border-t border-white/10 pt-4 text-sm text-slate-300/90">
+            <div class="font-medium text-slate-100">Susan Daniels</div>
+            <div>Former Vice President, R&amp;D</div>
+            <div>IDbyDNA</div>
+          </div>
+        </article>
+      </div>
 
-Throughout his tenure supporting us, Gordon consistently rose to the challenge of our evolving hiring demands, delivering top-tier talent while ensuring strong organizational fit. His partnership was invaluable in shaping the teams that fueled Gilead’s success.
-              </p>
-            </blockquote>
-            <footer class="mt-6 text-sm text-slate-300/90">
-              <p class="font-semibold text-slate-100">Traci Carrithers</p>
-              <p>Former, Executive Coordinator | Gilead Sciences</p>
-              <p>Vice President, Operations | NextQuest LLC</p>
-            </footer>
-          </article>
-
-          <!-- Susan Daniels -->
-          <article class="glass rounded-2xl border border-white/10 p-6 md:p-8">
-            <blockquote class="text-slate-100 leading-relaxed">
-              <p class="whitespace-pre-line">
-I had the pleasure of working with Gordon Straughn during a recent career transition, and I can’t recommend him highly enough. As a molecular diagnostic and genomic product development expert, I was looking for the right leadership opportunity to align with my experience and aspirations.
-              
-Gordon stood out by taking the time to understand my background and career goals, while also providing deep insight into the biopharma landscape. His guidance, transparency, and advocacy were instrumental in helping me secure a role as the Vice President, R&amp;D at IDbyDNA.
-
-If you’re seeking a recruiter who combines industry expertise with a genuine commitment to candidate success, I strongly recommend connecting with Gordon Straughn.
-              </p>
-            </blockquote>
-            <footer class="mt-6 text-sm text-slate-300/90">
-              <p class="font-semibold text-slate-100">Susan Daniels</p>
-              <p>Former Vice President, R&amp;D</p>
-              <p>IDbyDNA</p>
-            </footer>
-          </article>
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="mt-10 flex justify-end">
+          <a href="index.html#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow">
+            Start a search
+          </a>
         </div>
       </div>
     </section>
@@ -237,15 +242,14 @@ If you’re seeking a recruiter who combines industry expertise with a genuine c
       <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
         <p>© <span id="year"></span> Biocruit Solutions. All rights reserved.</p>
         <div class="flex items-center gap-4">
-          <a class="hover:underline" href="index.html#contact">Contact</a>
-          <a class="hover:underline" href="#">Privacy</a>
+          <a class="hover:underline" href="index.html#privacy">Privacy</a>
+          <a class="hover:underline" href="index.html#terms">Terms</a>
         </div>
       </div>
     </footer>
+  </div>
 
-  </div> <!-- /content-layer -->
-
-  <!-- Nav & Year -->
+  <!-- Year + Mobile Nav -->
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
@@ -253,7 +257,7 @@ If you’re seeking a recruiter who combines industry expertise with a genuine c
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-  <!-- Animated dots background (same as index) -->
+  <!-- Animated dots background -->
   <script>
     (function () {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -278,8 +282,7 @@ If you’re seeking a recruiter who combines industry expertise with a genuine c
         }
         rafId = requestAnimationFrame(step);
       }
-
-      function init(){ canvas.classList.add('stars-layer'); if (!prefersReduced) step(); }
+      function init(){ canvas.classList.add('stars-layer'); if(!prefersReduced) step(); }
       resize(); addEventListener('resize', resize, {passive:true}); init();
       addEventListener('beforeunload', () => cancelAnimationFrame(rafId));
     })();
