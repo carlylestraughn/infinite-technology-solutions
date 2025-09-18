@@ -65,17 +65,73 @@
 </head>
 <body class="bg-base-950 text-slate-100">
 
-  <!-- Stars canvas -->
+  <!-- Stars -->
   <canvas id="bgDots" class="stars-layer" aria-hidden="true"></canvas>
 
-  <!-- Decorative SVGs -->
+  <!-- Decorations -->
   <div class="decor-layer">
-    <!-- ... existing SVGs unchanged ... -->
+    <!-- DNA -->
+    <svg class="dna-top-right float-slow" viewBox="0 0 240 520" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="dnaG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8ab4ff"/><stop offset="100%" stop-color="#5bb0ff"/>
+        </linearGradient>
+      </defs>
+      <path d="M30 30 C160 90, 80 210, 200 270
+               M200 30 C80 90, 160 210, 30 270
+               M30 270 C160 330, 80 450, 200 510
+               M200 270 C80 330, 160 450, 30 510"
+            stroke="url(#dnaG)" stroke-width="4" opacity="0.8"/>
+    </svg>
+
+    <!-- Hex -->
+    <svg class="hex-upper-right float-slower spin-slowest" viewBox="0 0 300 260" fill="none" aria-hidden="true">
+      <g stroke="#66d6ff" stroke-width="1.6" opacity="0.55">
+        <path d="M50 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M100 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+        <path d="M150 30 l25 -14 l25 14 l0 28 l-25 14 l-25 -14 Z"/>
+      </g>
+    </svg>
+
+    <!-- Molecule -->
+    <svg class="molecule-bottom-left-global float-slow" viewBox="0 0 380 220" fill="none" aria-hidden="true">
+      <defs>
+        <radialGradient id="molG" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#a8cdfc"/><stop offset="100%" stop-color="#5cb6ff"/>
+        </radialGradient>
+      </defs>
+      <g stroke="#87c6ff" stroke-width="2" opacity=".65">
+        <line x1="40"  y1="120" x2="120" y2="80"/>
+        <line x1="120" y1="80" x2="170" y2="120"/>
+        <line x1="170" y1="120" x2="220" y2="90"/>
+      </g>
+      <circle cx="40" cy="120" r="10" fill="url(#molG)"/>
+      <circle cx="120" cy="80"  r="12" fill="url(#molG)"/>
+      <circle cx="170" cy="120" r="11" fill="url(#molG)"/>
+      <circle cx="220" cy="90"  r="9"  fill="url(#molG)"/>
+    </svg>
   </div>
 
   <!-- Content -->
   <div class="content-layer">
-    <!-- ... other sections unchanged ... -->
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-base-950/70 backdrop-blur border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 font-semibold">
+          <img src="https://i.postimg.cc/RZYx2k1F/temp-Imagep6j-Twm.avif" alt="Biocruit Solutions logo" class="h-10 w-10 rounded-lg object-contain" />
+          <span class="text-xl">Biocruit Solutions</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-brand-300">About</a>
+          <a href="#specialties" class="hover:text-brand-300">Specialties</a>
+          <a href="#roles" class="hover:text-brand-300">Roles</a>
+          <a href="#process" class="hover:text-brand-300">Process</a>
+          <a href="#why" class="hover:text-brand-300">Why us</a>
+          <a href="testimonials.html" class="hover:text-brand-300">Testimonials</a>
+          <a href="#contact" class="hover:text-brand-300">Contact</a>
+        </nav>
+      </div>
+    </header>
 
     <!-- Contact -->
     <section id="contact" class="py-20 relative">
@@ -89,46 +145,19 @@
             <p>Calendly: <a class="text-brand-300 hover:underline" href="https://calendly.com/gordon-biocruitsolutions/">https://calendly.com/gordon-biocruitsolutions/</a></p>
           </div>
         </div>
-
-        <!-- Formspree form (unchanged) -->
-        <form id="contactForm"
-              class="bg-white/[.03] rounded-2xl border border-white/10 p-6 shadow-sm space-y-4"
-              action="https://formspree.io/f/mrbajpjp"
-              method="POST">
-          <input type="hidden" name="_subject" value="New inquiry from biocruitsolutions.com" />
-          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-          <div>
-            <label class="block text-sm font-medium" for="name">Your name</label>
-            <input class="mt-1 w-full rounded-xl border border-white/15 bg-base-900/50 px-3 py-2 text-slate-100 placeholder-slate-400"
-                   id="name" name="name" placeholder="Jane Doe" required />
-          </div>
-          <div>
-            <label class="block text-sm font-medium" for="email">Email</label>
-            <input type="email" class="mt-1 w-full rounded-xl border border-white/15 bg-base-900/50 px-3 py-2 text-slate-100 placeholder-slate-400"
-                   id="email" name="email" placeholder="jane@company.com" required />
-          </div>
-          <div>
-            <label class="block text-sm font-medium" for="company">Company</label>
-            <input class="mt-1 w-full rounded-xl border border-white/15 bg-base-900/50 px-3 py-2 text-slate-100 placeholder-slate-400"
-                   id="company" name="company" placeholder="Company, Inc." />
-          </div>
-          <div>
-            <label class="block text-sm font-medium" for="message">What are you hiring?</label>
-            <textarea class="mt-1 w-full rounded-xl border border-white/15 bg-base-900/50 px-3 py-2 text-slate-100 placeholder-slate-400"
-                      id="message" name="message" rows="5" placeholder="Role, seniority, location, timeline"></textarea>
-          </div>
-          <button id="submitBtn" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 py-2 rounded-xl" type="submit">
-            Send
-          </button>
-          <p id="formStatus" class="text-sm mt-2 hidden"></p>
-        </form>
       </div>
     </section>
 
-    <!-- Footer (unchanged) -->
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/10 bg-base-950">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <p>© <span id="year"></span> Biocruit Solutions. All rights reserved.</p>
+      </div>
+    </footer>
   </div>
 
-  <!-- Scripts (unchanged) -->
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
